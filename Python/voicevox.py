@@ -1,9 +1,12 @@
+import sys
+sys.path.append("/usr/local/lib/python3.9/site-packages")
 import json
 import requests
 import wave
 
-def generate_wav(text, speaker=2, filepath='./audio.wav'):
-    host = 'localhost'
+def generate_wav(text, speaker=3, filepath='./audio/audio.wav'):
+
+    host = 'voicevox_engine'
     port = 50021
     params = (
         ('text', text),
