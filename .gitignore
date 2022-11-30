@@ -4,3 +4,4 @@ debug
 CACHEDIR.TAG
 Python/__pycache__
 audio.wav
+.env

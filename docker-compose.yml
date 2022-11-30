@@ -35,8 +35,6 @@ services:
       - ./frontend:/frontend
       - node:/frontend/node_modules
       - audio:/frontend/src/assets/audio
-    ports:
-      - 3000:3000
     tty: true
     restart: always
     networks:
