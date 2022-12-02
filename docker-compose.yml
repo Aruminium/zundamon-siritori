@@ -31,7 +31,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    volumes: 
+    volumes:
       - ./frontend:/frontend
       - node:/frontend/node_modules
       - audio:/frontend/src/assets/audio
@@ -57,6 +57,23 @@ services:
       - voicevox_engine
     networks:
       - nginx_network
+
+  db:
+    image: postgres:15.1-alpine
+    command: postgres -c stats_temp_directory=/tmp
+    container_name: db
+    env_file:
+      - docker/env/db.env
+    volumes:
+      - ./db/postgres_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+      - ./db/config/postgresql.conf:/etc/postgresql/postgresql.conf
+    ports:
+      - 5432:5432
+    tty: true
+    restart: always
+    networks:
+      - backend
 
 networks:
   nginx_network:
