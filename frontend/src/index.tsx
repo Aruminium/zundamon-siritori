@@ -5,4 +5,4 @@ import "./index.css";
 import App from "./App";
 import Top from "./Top";
 
-render(() => <Top />, document.getElementById("root") as HTMLElement);
+render(() => <App />, document.getElementById("root") as HTMLElement);
