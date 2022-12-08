@@ -1,0 +1,1 @@
+SELECT s.* FROM(SELECT name, continuation_count, RANK() OVER(ORDER BY continuation_count DESC) AS rank_result FROM ranking) AS s WHERE s.rank_result <= 10;
