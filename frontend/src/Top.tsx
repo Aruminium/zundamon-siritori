@@ -7,11 +7,16 @@ import Grid from "@suid/material/Grid";
 import Credit from "./components/credit";
 import InputText from "./components/Input";
 import Button from "@suid/material/Button";
+import { Router, Routes, Route, Link } from "solid-app-router";
 
 const Top: Component = () => {
   return (
     <div
-      style={{ height: "100vh", "background-color": "#D9D9D9", width: "100%" }}
+      style={{
+        height: "100vh",
+        "background-color": "#D9D9D9",
+        width: "100%",
+      }}
     >
       <Header />
       <Grid container height="auto" bgcolor="#D9D9D9">
