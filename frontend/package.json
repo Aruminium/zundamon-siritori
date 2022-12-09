@@ -24,6 +24,7 @@
     "axios": "^0.27.2",
     "clsx": "^1.1.1",
     "prop-types": "^15.8.1",
+    "solid-app-router": "^0.4.2",
     "solid-js": "^1.4.2",
     "solid-js-form": "^0.1.5"
   }
