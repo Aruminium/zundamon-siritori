@@ -9,8 +9,8 @@ const App: Component = () => {
     <Router>
       <Routes>
         <Route path="/" component={Top} />
-        <Route path="/Start" component={Start} />
-        <Route path="/Game" component={Game} />
+        <Route path="/start" component={Start} />
+        <Route path="/game" component={Game} />
       </Routes>
     </Router>
   );
