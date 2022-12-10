@@ -18,7 +18,7 @@ const Header: Component = () => {
             lineHeight="80px"
             style={{"overflow": "hidden", "white-space": "nowrap", "text-overflow": "ellipsis"}}
           >
-            ずんだもん しりとり
+            ずんだもん しりとり
           </Typography>
         </AppBar>
       </Box>
