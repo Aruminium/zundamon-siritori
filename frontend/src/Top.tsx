@@ -1,15 +1,8 @@
 import type { Component } from "solid-js";
 import Header from "./components/header";
-import Box from "@suid/material/Box";
 import GameTable from "./components/gameTable";
-import Zunda from "./components/zunda";
 import Grid from "@suid/material/Grid";
-import Credit from "./components/credit";
-import InputText from "./components/Input";
 import Button from "@suid/material/Button";
-import Start from "./Start";
-import { useNavigate } from "solid-app-router";
-import { Router, Routes, Route, Link } from "solid-app-router";
 
 const Top: Component = () => {
   const navigate = useNavigate();
