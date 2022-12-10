@@ -3,6 +3,7 @@ import { Router, Routes, Route } from "solid-app-router";
 import Top from "./Top";
 import Start from "./Start";
 import Game from "./Game";
+import Ranking from "./Ranking";
 
 const App: Component = () => {
   return (
@@ -11,6 +12,7 @@ const App: Component = () => {
         <Route path="/" component={Top} />
         <Route path="/start" component={Start} />
         <Route path="/game" component={Game} />
+        <Route path="/ranking" component={Ranking} />
       </Routes>
     </Router>
   );
