@@ -20,3 +20,15 @@ $ docker compose up -d
 
 最初に「しりとり」と入力してゲームスタート.デバッグしていないので上手く動く保証がないです。
 
+
+## APIリファレンス
+
+### 名前と継続回数をpost
+```shell
+$ curl -X POST -H "Content-Type: application/json" -d '{"name": "bana7", "continuation_count": 6 }' http://localhost:5000/ranking
+```
+
+### ランキングをget
+```shell
+$ curl http://localhost:5000/ranking
+```

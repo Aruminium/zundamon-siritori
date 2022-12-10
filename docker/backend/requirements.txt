@@ -2,3 +2,5 @@ flask
 requests
 flask-cors
 wave
+Flask-SQLAlchemy
+psycopg2-binary

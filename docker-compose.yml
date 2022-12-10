@@ -10,6 +10,8 @@ services:
       - audio:/backend/audio
     tty: true
     restart: always
+    env_file:
+      - ./docker/env/db.env
     ports:
       - 5000:5000
     depends_on:

@@ -3,6 +3,7 @@ import Header from "./components/header";
 import GameTable from "./components/gameTable";
 import Grid from "@suid/material/Grid";
 import Button from "@suid/material/Button";
+import { useNavigate } from "solid-app-router";
 
 const Top: Component = () => {
   const navigate = useNavigate();
