@@ -12,6 +12,7 @@ import { useNavigate } from "solid-app-router";
 import { Router, Routes, Route, Link } from "solid-app-router";
 
 const Top: Component = () => {
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -29,7 +30,9 @@ const Top: Component = () => {
           alignItems="center"
           direction="column"
         >
-          <Button variant="contained">ゲストユーザログイン</Button>
+          <Button variant="contained" onClick={() => navigate("/start")}>
+            ゲストユーザログイン
+          </Button>
         </Grid>
       </Grid>
     </div>
