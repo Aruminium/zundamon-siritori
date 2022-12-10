@@ -7,6 +7,8 @@ import Grid from "@suid/material/Grid";
 import Credit from "./components/credit";
 import InputText from "./components/Input";
 import Button from "@suid/material/Button";
+import Start from "./Start";
+import { useNavigate } from "solid-app-router";
 import { Router, Routes, Route, Link } from "solid-app-router";
 
 const Top: Component = () => {
