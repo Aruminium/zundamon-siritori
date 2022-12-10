@@ -30,6 +30,8 @@ services:
       - ./frontend:/frontend
       - node:/frontend/node_modules
       - audio:/frontend/src/assets/audio
+    env_file:
+      - ./docker/env/goo.env
     tty: true
     ports:
       - 3000:3000

@@ -9,5 +9,4 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /backend
 COPY /backend/ .
 COPY --from=builder /usr/local/lib/python3.9/site-packages /usr/local/lib/python3.9/site-packages/
-USER 1001
 CMD ["python", "server.py"]
