@@ -4,6 +4,7 @@ import GameTable from "./components/gameTable";
 import Grid from "@suid/material/Grid";
 import Button from "@suid/material/Button";
 import { useNavigate } from "solid-app-router";
+import Zunda from "./components/zunda";
 import { Router, Routes, Route, Link } from "solid-app-router";
 
 const Start: Component = () => {
@@ -19,12 +20,20 @@ const Start: Component = () => {
           container
           justifyContent="center"
           alignItems="center"
-          direction="column"
+          direction="row"
         >
-          <h1>「ん」がついたら負けなのだ！</h1>
-          <Button variant="contained" onClick={() => navigate("/game")}>
-            ゲームを開始する
-          </Button>
+          <Grid item xs={7}>
+            <h1>「ん」がついたら負けなのだ！</h1>
+            <h1>同じ言葉を使ってはいけないのだ！</h1>
+          </Grid>
+          <Grid item xs={4}>
+            <Zunda />
+          </Grid>
+          <Grid item xs={2}>
+            <Button variant="contained" onClick={() => navigate("/game")}>
+              ゲームを開始する
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
     </div>
