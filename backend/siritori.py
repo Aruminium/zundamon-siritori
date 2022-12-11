@@ -55,7 +55,7 @@ class Siritori:
             return "語尾にーをつけることはできません", FlagType.CONTINUE.value
         else:
             if not self.old_noun[-1] == noun[0]:
-                return self.old_noun[-1]+"から始まっていません\n"+"あなたの負けです", FlagType.FINISH.value
+                return self.old_noun[-1]+"から始まっていません      \n"+noun[0]+"から始めて下さい", FlagType.CONTINUE.value
 
         # プレイヤーの返答が"ん"で終わっているかを確認する
         if self.__is_finish_nn(noun):
@@ -79,4 +79,3 @@ class Siritori:
     def __is_finish_nn(self, noun: str) -> bool:
         if noun[-1] == "ん":
             return True
-
