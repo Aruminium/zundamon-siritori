@@ -24,8 +24,14 @@ const Top: Component = () => {
           alignItems="center"
           direction="column"
         >
+          <h1 style="color:green">ずんだもんとは</h1>
+          <h2>
+            東北ずん子が所持する「ずんだアロー」に変身できる。 ずんだ餅の精。
+          </h2>
+          <h1 style="color:green">ずんだもんしりとりとは</h1>
+          <h2>ずんだもんとボイス付きのしりとりができるのだ！</h2>
           <Button variant="contained" onClick={() => navigate("/start")}>
-            ゲストユーザログイン
+            ゲームに進む
           </Button>
         </Grid>
       </Grid>
