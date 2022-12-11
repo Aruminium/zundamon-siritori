@@ -22,9 +22,13 @@ const Start: Component = () => {
           alignItems="center"
           direction="row"
         >
-          <Grid item xs={7}>
-            <h1>「ん」がついたら負けなのだ！</h1>
-            <h1>同じ言葉を使ってはいけないのだ！</h1>
+          <Grid item xs={7} bgcolor="#67A7CC">
+            <h2>「ん」がついたら負けなのだ！</h2>
+            <h2>同じ言葉を使ってはいけないのだ！</h2>
+            <h2>語尾の小文字は大文字に変換されるのだ！</h2>
+            <h3>例) やぁ → やあ</h3>
+            <h2>語尾に「ー」がある場合はその一つ前の文字から始めるのだ！</h2>
+            <h3>例)ルビー → 琵琶湖</h3>
           </Grid>
           <Grid item xs={4}>
             <Zunda />

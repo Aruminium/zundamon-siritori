@@ -25,11 +25,15 @@ const Top: Component = () => {
           direction="column"
         >
           <h1 style="color:green">ずんだもんとは</h1>
-          <h2>
-            東北ずん子が所持する「ずんだアロー」に変身できる。 ずんだ餅の精。
-          </h2>
+          <Grid bgcolor="#B4CF9E">
+            <h2>
+              東北ずん子が所持する「ずんだアロー」に変身できる　ずんだ餅の精
+            </h2>
+          </Grid>
           <h1 style="color:green">ずんだもんしりとりとは</h1>
-          <h2>ずんだもんとボイス付きのしりとりができるのだ！</h2>
+          <Grid bgcolor="#B4CF9E">
+            <h2>ずんだもんとボイス付きのしりとりができるのだ！</h2>
+          </Grid>
           <Button variant="contained" onClick={() => navigate("/start")}>
             ゲームに進む
           </Button>
