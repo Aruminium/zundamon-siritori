@@ -1,7 +1,7 @@
 import { Component, createEffect, createSignal, For, Index } from "solid-js";
 import Header from "./components/header";
 import GameTable from "./components/gameTable";
-import Zunda from "./components/zunda";
+import Zunda, { count } from "./components/zunda";
 import Grid from "@suid/material/Grid";
 import Button from "@suid/material/Button";
 import { useNavigate } from "solid-app-router";
@@ -22,11 +22,7 @@ import CircularProgress from "@suid/material/CircularProgress";
 import Typography from "@suid/material/Typography";
 import { TwitterIntentTweet } from "./components/twitterIntentTweet";
 
-type Props = {
-  continuation_count?: number;
-};
-
-const Ranking: Component<Props> = ({ continuation_count = 0 }) => {
+const Ranking: Component = () => {
   const navigate = useNavigate();
   const [ranking, setRanking] = createSignal<RankingType[]>();
   const [isLoading, setIsLoading] = createSignal(true);
@@ -46,7 +42,7 @@ const Ranking: Component<Props> = ({ continuation_count = 0 }) => {
   const rankingHandleClick = async () => {
     const postData: RankingType = {
       name: text(),
-      continuation_count: continuation_count,
+      continuation_count: count(),
     };
     const res = await postRanking(postData);
     setIsPost(true);
@@ -64,7 +60,7 @@ const Ranking: Component<Props> = ({ continuation_count = 0 }) => {
         <Grid container height="auto" bgcolor="#4CD0A9" padding={3}>
           <Grid item paddingY={3} xs={12} container justifyContent="center">
             <Typography variant="h3">
-              あなたのスコアは{continuation_count}回なのだ!
+              あなたのスコアは{count()}回なのだ!
             </Typography>
           </Grid>
           <Grid item container>
@@ -132,14 +128,13 @@ const Ranking: Component<Props> = ({ continuation_count = 0 }) => {
                 </Grid>
                 <Grid item xs={6}>
                   <TwitterIntentTweet
-                    text={continuation_count+"回続きました！"}
+                    text={count()+"回続きました！"}
                     hashtags={["ずんだもんしりとり"]}
                   />
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
-          <GameTable />
         </Grid>
       )}
     </Box>

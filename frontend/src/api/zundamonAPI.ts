@@ -45,3 +45,12 @@ export const postRanking = async ({
     console.error(error);
   }
 };
+
+export const init = async () => {
+  try {
+    const res = await instance.get("/init");
+    return res;
+  } catch (error) {
+    console.error(error);
+  }
+}

@@ -1,12 +1,30 @@
-import type { Component } from "solid-js";
+import { Component, createEffect, createSignal } from "solid-js";
 import Header from "./components/header";
-import GameTable from "./components/gameTable";
+import GameTable, { cards, cardType, setCards } from "./components/gameTable";
 import Zunda from "./components/zunda";
 import Grid from "@suid/material/Grid";
 import Credit from "./components/credit";
 import InputText from "./components/Input";
+import { init } from "./api/zundamonAPI";
+import { Howl } from "howler";
+import { Router, useNavigate } from "solid-app-router";
 
 const Game: Component = () => {
+  const [sound, setSound] = createSignal<Howl>(
+    new Howl({
+      src: "src/assets/common/start.wav",
+    })
+  );
+  createEffect(() => {
+    (async () => {
+      const res = await init();
+      const card: cardType = { isPlayer: false, message: "しりとり" };
+      sound()?.play();
+      setCards([...cards(), card]);
+      console.log(res);
+    })();
+  }),
+    [sound()];
   return (
     <div
       style={{ height: "100vh", "background-color": "#D9D9D9", width: "100%" }}
@@ -26,7 +44,6 @@ const Game: Component = () => {
             </Grid>
           </Grid>
         </Grid>
-
         <Grid item borderRadius={2} bgcolor="white" margin={1} xs={12}>
           <InputText />
         </Grid>

@@ -5,7 +5,7 @@ import Grid from "@suid/material/Grid";
 import Button from "@suid/material/Button";
 import { useNavigate } from "solid-app-router";
 import Zunda from "./components/zunda";
-import { Router, Routes, Route, Link } from "solid-app-router";
+import zundamon from "./assets/zundamon.png";
 
 const Start: Component = () => {
   const navigate = useNavigate();
@@ -31,7 +31,11 @@ const Start: Component = () => {
             <h3>例)ルビー → 琵琶湖</h3>
           </Grid>
           <Grid item xs={4}>
-            <Zunda />
+            <img
+              src={zundamon}
+              alt="zundamon"
+              style={{ "align-items": "center" }}
+            />
           </Grid>
           <Grid item xs={2}>
             <Button variant="contained" onClick={() => navigate("/game")}>

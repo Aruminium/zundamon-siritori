@@ -7,6 +7,7 @@ from siritori import Siritori
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import desc
 import json
+from siritori import FlagType
 
 USER = os.environ["POSTGRES_USER"]
 PASSWORD = os.environ["POSTGRES_PASSWORD"]
@@ -54,15 +55,22 @@ def post_ranking():
 
 @app.route("/siritori", methods=['POST'])
 def index():
-	global siritori
-	data = request.get_json()
-	text = data["post_text"]
-	next_noun, col = siritori.return_nextnoun(text)
-	if col:
-		siritori = Siritori("output.txt")
-		return Response(response="あなたの負けなのだ", status=201)
-	generate_wav(next_noun+"なのだ")
-	return Response(response=next_noun, status=200)
+  global siritori
+  data = request.get_json()
+  text = data["post_text"]
+  next_noun, col = siritori.return_nextnoun(text)
+  if col==FlagType.USER_WIN.value:#勝ち
+    return Response(response=next_noun, status=202)
+  elif col==FlagType.USER_LOSE.value:#負け
+    return Response(response="あなたの負けなのだ", status=201)
+  generate_wav(next_noun+"なのだ")
+  return Response(response=next_noun, status=200)
+
+@app.route("/init", methods=["GET"])
+def init():
+  global siritori
+  siritori = Siritori("output.txt")
+  return Response(status=200)
 
 if __name__ == "__main__":
     app.debug = True

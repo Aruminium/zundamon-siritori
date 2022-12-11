@@ -5,9 +5,8 @@ import Card from "@suid/material/Card";
 import CardContent from "@suid/material/CardContent";
 import CardHeader from "@suid/material/CardHeader";
 import Divider from "@suid/material/Divider";
-import Grid from "@suid/material/Grid";
 import type { Component } from "solid-js";
-import ZundaAvatar from "../assets/zunda-avatar.jpg"
+import ZundaAvatar from "../assets/zunda-avatar.jpg";
 import { MainTheme } from "../models/mainColorTheme";
 
 type cardType = {
@@ -21,20 +20,23 @@ const Message: Component<cardType> = ({ isPlayer, message }) => {
       <Card sx={{ borderRadius: 6, m: 1, border: 1 }}>
         <CardHeader avatar={<Avatar alt="Player" />} title="あなた" />
         <Divider />
-        <CardContent sx={{textAlign: "center"}}>{message}</CardContent>
+        <CardContent sx={{ textAlign: "center" }}>{message}</CardContent>
       </Card>
     );
   } else {
     return (
-			<ThemeProvider theme={MainTheme}>
-				<Box color="primary">
-					<Card sx={{ borderRadius: 6, m: 1, border: 1}} >
-						<CardHeader  avatar={<Avatar alt="Zunda" src={ZundaAvatar} />} title="ずんだもん" />
-						<Divider />
-						<CardContent sx={{textAlign: "center"}}>{message}</CardContent>
-					</Card>
-				</Box>
-			</ThemeProvider>
+      <ThemeProvider theme={MainTheme}>
+        <Box color="primary">
+          <Card sx={{ borderRadius: 6, m: 1, border: 1 }}>
+            <CardHeader
+              avatar={<Avatar alt="Zunda" src={ZundaAvatar} />}
+              title="ずんだもん"
+            />
+            <Divider />
+            <CardContent sx={{ textAlign: "center" }}>{message}</CardContent>
+          </Card>
+        </Box>
+      </ThemeProvider>
     );
   }
 };
