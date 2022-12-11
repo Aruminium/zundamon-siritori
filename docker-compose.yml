@@ -32,6 +32,7 @@ services:
       - ./frontend:/frontend
       - node:/frontend/node_modules
       - audio:/frontend/src/assets/audio
+      - ./frontend/src/assets/common:/frontend/src/assets/common
     env_file:
       - ./docker/env/goo.env
     tty: true

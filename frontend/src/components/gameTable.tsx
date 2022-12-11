@@ -1,12 +1,10 @@
 import { Component, createEffect, createSignal, Ref } from "solid-js";
-import { createTheme, ThemeProvider } from "@suid/material/styles";
+import { ThemeProvider } from "@suid/material/styles";
 import { MainTheme } from "../models/mainColorTheme";
 import Paper from "@suid/material/Paper";
 import Message from "./Message";
-import CardHeader from "@suid/material/CardHeader";
-import Divider from "@suid/material/Divider";
 
-type cardType = {
+export type cardType = {
   isPlayer: boolean;
   message: string;
 };
@@ -42,3 +40,4 @@ const GameTable: Component = () => {
 
 export default GameTable;
 export const [cards, setCards] = createSignal<cardType[]>([]);
+export const [isPosting, setIsPosting] = createSignal(false);
