@@ -55,7 +55,7 @@ class Siritori:
         if noun[-1] == "ー":
             # 「ー」を抜いた変数に置き換える
             # 例 ルビー → ルビ
-            noun = noun[0:-2]
+            noun = noun[0:-1]
         # ユーザが前の単語の語尾から始まる単語を入力したか確認する
         if not self.old_noun[-1] == noun[0]:
             return self.old_noun[-1]+"から始まっていません\n"+"あなたの負け", FlagType.USER_LOSE.value
@@ -81,7 +81,7 @@ class Siritori:
         if next_noun[-1] == "ー":
         # 「ー」を抜いた変数に置き換える
         # 例 ルビー → ルビ
-            next_noun = next_noun[0:-2]
+            next_noun = next_noun[0:-1]
         # 拗音が入っている場合 大文字に変換する
         if next_noun[-1] in self.hiragana_you_on_dict.keys():
             next_noun[-1] = self.hiragana_you_on_dict.get(next_noun[-1])
