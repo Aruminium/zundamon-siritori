@@ -4,6 +4,7 @@ import { MainTheme } from "../models/mainColorTheme";
 import zundamon from "../assets/zundamon.png";
 import Grid from "@suid/material/Grid";
 import Typography from "@suid/material/Typography";
+import { count } from "../Game";
 
 const Zunda: Component = () => {
   return (
@@ -24,4 +25,4 @@ const Zunda: Component = () => {
   );
 };
 export default Zunda;
-export const [count, setCount] = createSignal(0);
+

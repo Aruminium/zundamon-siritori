@@ -6,13 +6,14 @@ import Grid from "@suid/material/Grid";
 import TextField from "@suid/material/TextField";
 import Button from "@suid/material/Button";
 import SendIcon from "@suid/icons-material/Send";
-import { cards, isPosting, setCards, setIsPosting } from "./gameTable";
+import { isPosting, setIsPosting } from "./gameTable";
 import { toHiragana } from "../api/hiraganaAPI";
 import { toZundamonAPI } from "../api/zundamonAPI";
-import { count, setCount } from "./zunda";
 import CircularProgress from "@suid/material/CircularProgress";
 import { useNavigate } from "solid-app-router";
 import { wait } from "../api/wait";
+import { cards, count, setCards, setCount } from "../Game";
+import { recognition } from "../api/speechAPI";
 
 type cardType = {
   isPlayer: boolean;
@@ -68,7 +69,10 @@ const InputText: Component = () => {
     sound()?.play();
     setText("");
   };
-
+  recognition.onresult = (event) => {
+    alert(event.results[0][0]?.transcript);
+  }
+  recognition.start()
   return (
     <ThemeProvider theme={MainTheme}>
       <Suspense fallback={<div>ちょっと待つなのだ</div>}>
@@ -90,6 +94,9 @@ const InputText: Component = () => {
               disabled={isPosting()}
             >
               送信
+            </Button>
+            <Button>
+              喋る
             </Button>
             {<CircularProgress /> && !isPosting()}
           </Grid>

@@ -1,6 +1,6 @@
 import { Component, createEffect, createSignal } from "solid-js";
 import Header from "./components/header";
-import GameTable, { cards, cardType, setCards } from "./components/gameTable";
+import GameTable, { cardType} from "./components/gameTable";
 import Zunda from "./components/zunda";
 import Grid from "@suid/material/Grid";
 import Credit from "./components/credit";
@@ -53,3 +53,5 @@ const Game: Component = () => {
 };
 
 export default Game;
+export const [cards, setCards] = createSignal<cardType[]>([]);
+export const [count, setCount] = createSignal(0);

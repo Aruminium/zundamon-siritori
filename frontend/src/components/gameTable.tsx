@@ -3,6 +3,7 @@ import { ThemeProvider } from "@suid/material/styles";
 import { MainTheme } from "../models/mainColorTheme";
 import Paper from "@suid/material/Paper";
 import Message from "./Message";
+import { cards } from "../Game";
 
 export type cardType = {
   isPlayer: boolean;
@@ -39,5 +40,4 @@ const GameTable: Component = () => {
 };
 
 export default GameTable;
-export const [cards, setCards] = createSignal<cardType[]>([]);
 export const [isPosting, setIsPosting] = createSignal(false);

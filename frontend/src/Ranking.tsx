@@ -1,7 +1,7 @@
 import { Component, createEffect, createSignal, For, Index } from "solid-js";
 import Header from "./components/header";
 import GameTable from "./components/gameTable";
-import Zunda, { count } from "./components/zunda";
+import Zunda from "./components/zunda";
 import Grid from "@suid/material/Grid";
 import Button from "@suid/material/Button";
 import { useNavigate } from "solid-app-router";
@@ -21,6 +21,7 @@ import TableBody from "@suid/material/TableBody";
 import CircularProgress from "@suid/material/CircularProgress";
 import Typography from "@suid/material/Typography";
 import { TwitterIntentTweet } from "./components/twitterIntentTweet";
+import { count } from "./Game";
 
 const Ranking: Component = () => {
   const navigate = useNavigate();
