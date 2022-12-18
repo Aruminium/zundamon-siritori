@@ -20,6 +20,7 @@ class Siritori:
             # 1行ずつ読み取る
             for line in lines:
                 self.siritori_list.append(line.replace("\n",""))
+        print("しりとり")
     def __return_nextnoun_list(self, text: str) -> List[str] or FlagType:
         '''
         入力されたテキストの最後の文字から始まる名詞のリストを返す
@@ -33,7 +34,7 @@ class Siritori:
         pattern=re.compile(r'^'+text[-1])
         str_match = [s for s in self.siritori_list if re.match(pattern, s)]
         if not str_match:
-            return FlagType.FINISH.value
+            return FlagType.USER_WIN.value
         return str_match
     def return_nextnoun(self, noun: str) -> Tuple[str, FlagType]:
         '''
